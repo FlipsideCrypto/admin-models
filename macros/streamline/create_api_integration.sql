@@ -6,7 +6,7 @@
   {% endfor %}
   {% set allowed_prefixes = allowed_prefixes|join(", ") %}
   {% set sql %}
-    CREATE OR REPLACE API INTEGRATION {{ project_name }}
+    CREATE OR REPLACE API INTEGRATION {{ project_name ~ "_v2" }} 
     API_PROVIDER = aws_api_gateway 
     API_AWS_ROLE_ARN = '{{ snowflake_role_arn }}' 
     API_ALLOWED_PREFIXES = ({{ allowed_prefixes }})
